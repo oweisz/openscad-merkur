@@ -1,6 +1,6 @@
-díly Merkur pro OpenSCAD
+# díly Merkur pro OpenSCAD
 
-pieces of Merkur for OpenSCAD
+# pieces of Merkur for OpenSCAD
 
 https://openscad.org
 
