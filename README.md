@@ -2,11 +2,11 @@
 
 # pieces of Merkur for OpenSCAD
 
-https://openscad.org
+[OpenSCAD]https://openscad.org
 
-https://www.merkurtoys.cz
+[Merkurtoysh]ttps://www.merkurtoys.cz
 
-http://merkur.kreteni.cz
+[Merkur kreteni}http://merkur.kreteni.cz
 
 no licensed: free for any use
 
@@ -27,7 +27,7 @@ install library BOSL2
 
 instaluj knihovnu BOSL2
 
-https://github.com/BelfrySCAD/BOSL2.git
+[BOSL2]https://github.com/BelfrySCAD/BOSL2.git
 
 simple example (jednoduchý příklad):  M####();
 
