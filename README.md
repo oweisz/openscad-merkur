@@ -6,7 +6,7 @@
 
 [Merkurtoys](https://www.merkurtoys.cz)
 
-[Merkur kreteni}(http://merkur.kreteni.cz)
+[Merkur kreteni](http://merkur.kreteni.cz)
 
 no licensed: free for any use
 
