@@ -2,6 +2,8 @@
 
 # pieces of Merkur for OpenSCAD
 
+![logo](img/merkur-logo.png)
+
 [OpenSCAD](https://openscad.org)
 
 [Merkurtoys](https://www.merkurtoys.cz)
