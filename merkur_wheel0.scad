@@ -224,7 +224,7 @@ module M1055(dx=30,thn="normal"){
 }
 
 //  1056 - gear cone 26 th. m0.6
-//  $fn=30;M1056();
+//  fn=30;M1056();
 module M1056(){
   color("black")
   difference(){
@@ -405,11 +405,11 @@ module M2043(){
     }
     for(i=[0:5])rotate([0,0,i*60])difference(){
       rotate([0,0,-90])translate([-5,5,-1])cube([10,28,2]);
-      for(j=[1:3])translate([j*10,0,-1.05])T0_hole(2.3);
+      for(j=[1:3])translate([j*10,0,-1.05])T1_hole(th=2.3);
     }
     difference(){
       translate([0,0,-1])cylinder(h=2, d=15);
-      translate([0,0,-1.05])T0_hole(4,4);
+      translate([0,0,-1.05])T1_hole(th=4,4);
     }
   }
   translate([0,0,-1.5])T0_hub(10.5);
@@ -651,7 +651,7 @@ module T0_Wex(dd=30,h=5,alpha=60){
   rotate_extrude()polygon(points=pg);
 }
 
-//T0_W1();
+//  T0_W1();
 module T0_W1(tw=1){
   translate([0,0,-tw/2])difference(){
     union(){
@@ -664,6 +664,7 @@ module T0_W1(tw=1){
   }
 }
 
+// T0_W2();
 module T0_W2(tw=1){
   translate([0,0,-.05]){
     cylinder(tw+.1,d=4);
@@ -671,7 +672,7 @@ module T0_W2(tw=1){
   }
 }
 
-
+//T0_W6();
 module T0_W6(tw=1){
   translate([0,0,-.05]){
     cylinder(tw+.1,d=5.7);
@@ -682,6 +683,7 @@ module T0_W6(tw=1){
   }
 }
 
+//T0_W6A();
 module T0_W6A(tw=1){
   translate([0,0,-.05]){
     cylinder(tw+.1,d=4);
