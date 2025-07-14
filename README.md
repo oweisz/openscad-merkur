@@ -19,12 +19,14 @@ use: copy file to library directory use to OpenSCAD eg:
 $HOME/Documents/OpenSCAD/library/merkur
  
 
-do souboru scad vlož řádku
+Pro zjednodušené zobrazení do souboru scad vlož řádku:
 
-insert to file scad include line:
+For simple view insert to file scad include line:
 
-include <merkur/merkur.scad>
- 
+include <merkur/merkur.scad> 
+
+
+<!-- 
 install library BOSL2
 
 instaluj knihovnu BOSL2
@@ -36,4 +38,4 @@ simple example (jednoduchý příklad):  M####();
 where #### is number piece from catalog Merkur
 
 kde #### je číslo dílu z katalogu MERKUR
-
+-->
