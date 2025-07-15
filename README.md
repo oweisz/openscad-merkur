@@ -27,15 +27,17 @@ include <merkur/merkur.scad>
 
 
 <!-- 
-install library BOSL2
+
+for detailed view install (detailní pohled)
+library BOSL2
 
 instaluj knihovnu BOSL2
 
-[BOSL2](https://github.com/BelfrySCAD/BOSL2.git)
+[BOSL2](https://github.com/BelfrySCAD/BOSL2.git) -->
 
 simple example (jednoduchý příklad):  M####();
 
 where #### is number piece from catalog Merkur
 
 kde #### je číslo dílu z katalogu MERKUR
--->
+
