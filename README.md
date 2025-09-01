@@ -33,7 +33,7 @@ library BOSL2
 pro podrobný pohled instaluj instaluj
 knihovnu BOSL2
 
-[BOSL2](https://github.com/BelfrySCAD/BOSL2.git) -->
+[BOSL2](https://github.com/BelfrySCAD/BOSL2.git)
 
 and insert line (vlož řádku)
 
