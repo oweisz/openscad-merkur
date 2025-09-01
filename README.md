@@ -2,6 +2,8 @@
 
 # pieces of Merkur for OpenSCAD
 
+![logo](img/merkur-logo.png)
+
 [OpenSCAD](https://openscad.org)
 
 [Merkurtoys](https://www.merkurtoys.cz)
@@ -17,17 +19,21 @@ use: copy file to library directory use to OpenSCAD eg:
 $HOME/Documents/OpenSCAD/library/merkur
  
 
-do souboru scad vlož řádku
+Pro zjednodušené zobrazení do souboru scad vlož řádku:
 
-insert to file scad include line:
+For simple view insert to file scad include line:
 
-include <merkur/merkur.scad>
- 
-install library BOSL2
+include <merkur/merkur.scad> 
+
+
+<!-- 
+
+for detailed view install (detailní pohled)
+library BOSL2
 
 instaluj knihovnu BOSL2
 
-[BOSL2](https://github.com/BelfrySCAD/BOSL2.git)
+[BOSL2](https://github.com/BelfrySCAD/BOSL2.git) -->
 
 simple example (jednoduchý příklad):  M####();
 
