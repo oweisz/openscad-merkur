@@ -27,7 +27,7 @@ include <merkur/merkur.scad>
 
 
 
-for detailed view install (detailní pohled)
+for detailed view install
 library BOSL2
 
 pro podrobný pohled instaluj instaluj
