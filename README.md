@@ -26,14 +26,18 @@ For simple view insert to file scad include line:
 include <merkur/merkur.scad> 
 
 
-<!-- 
 
 for detailed view install (detailní pohled)
 library BOSL2
 
-instaluj knihovnu BOSL2
+pro podrobný pohled instaluj instaluj
+knihovnu BOSL2
 
 [BOSL2](https://github.com/BelfrySCAD/BOSL2.git) -->
+
+and insert line (vlož řádku)
+
+include <merkur/merkur_bosl2.scad>
 
 simple example (jednoduchý příklad):  M####();
 
