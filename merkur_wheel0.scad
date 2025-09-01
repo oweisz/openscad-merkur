@@ -581,7 +581,7 @@ module T0_WM4(drive="none"){
 
 // nuts M3.5 thickness - výška matice
 T0_nnrm=2.6;  //Z-size nut "normal"
-T0_nthc=2;    //Z-size nut "thick"
+T0_nthc=2;    //Z-size nut "thin"
 
 //  screw M3.5 with nut
 //  šroub M3.5 s maticí
@@ -593,7 +593,7 @@ T0_nthc=2;    //Z-size nut "thick"
 //  if "dist > len" no render nut
 //  pokud "dist > len" nerenreruje matici
 // ex:
-//  $fn=30;T0_M35(10,5,"thick");translate([10,0,0])T0_M35(10,5);
+//  $fn=30;translate([0,0,10.5])T0_M35(10,5);translate([10,0,0])T0_M35(10,5,thickness="thick");
 module T0_M35(shaftlen=4,nutdist=30,thickness="normal",drive="none"){
     translate([0,0,-shaftlen]){
       cylinder(shaftlen,d=3.5);
@@ -606,10 +606,10 @@ module T0_M35(shaftlen=4,nutdist=30,thickness="normal",drive="none"){
 //  nut M3.5
 //  matice thickness
 //  T0_M35(
-//    thickness - Z size = "normal"|"thick"
+//    thickness - Z size = "normal"|"thin"
 //  );
 // ex:
-//  $fn=30;T0_M35N();translate([20,0,0])T0_M35N("thick");
+//  $fn=30;T0_M35N();translate([20,0,0])T0_M35N("thin");
 module T0_M35N(thickness="normal"){
   thn=(thickness=="normal")?T0_nnrm:T0_nthc;
   difference(){
