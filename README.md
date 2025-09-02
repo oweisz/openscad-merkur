@@ -25,7 +25,7 @@ For simple view insert to file scad include line:
 
 include <merkur/merkur.scad> 
 
-![BOSL2](img/merkur-bosl2.png)
+![BOSL2](img/merkur_bosl2.png)
 
 
 for detailed view install
