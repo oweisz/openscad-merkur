@@ -100,7 +100,7 @@ module M1043(color="green"){
   translate([0,0,-1.5])B2_hub(10.5);
 }
 
-//  1044 - gear worm
+//  1044 - gear worm, m0.6
 //  $fn=30;M1044();
 module M1044(){
   //#cylinder(h=16,d=11);
@@ -115,7 +115,7 @@ color("silver")difference(){
     }
     translate([0,0,-1])cylinder(20,d=3.8);
   }
-  translate([0,-1.5,13.3])rotate([90,0,0])B2_WM4();
+  translate([0,-1.8,13.3])rotate([90,0,0])B2_WM4();
 }
 
 //  1045 - gear 50 th. m0.6
@@ -584,7 +584,7 @@ module M3089(color="green",hub=false){
 //  $fn=30;B2_SM3();
 module B2_SM3(drive="none"){
   color("Silver"){
-     translate([0,0,3.8])B2_M35(4,nutdist=10);
+     translate([0,0,3.88])B2_M35(4,nutdist=10);
      //translate([0,0,3.8])cylinder(2,d=5.2);
   }
 }
@@ -594,19 +594,18 @@ module B2_SM3(drive="none"){
 // ex:
 //  $fn=30;B2_WM4();
 module B2_WM4(drive="none"){
-  color("Silver")screw("M4",length=4,head="none",drive="torx",anchor=BOTTOM);;
+  color("Silver")screw("M4",length=4,head="none",drive="slot",anchor=BOTTOM);;
 }
 // -----------------------------------------
 
 // screws and nuts M3.5 
 // šrouby a matice M3.5
 
-//$fn=30;
-//screw_head();
+// $fn=30; B2_screw_head();
 module B2_screw_head(){
   difference(){
-    cyl(l=2.8,d1=5.7,d2=5.5,anchor=BOTTOM,rounding=.5);
-    up(2.8-0.45)torx_mask2d(15,CENTER,0);
+    cyl(l=2.33,d1=5.9,d2=5.9,anchor=BOTTOM,rounding=.25);
+    up(2.85-1)torx_mask2d(20,CENTER,0);
   }
 }
 
@@ -651,13 +650,13 @@ module B2_M35N(thickness="normal"){
 //    wm4 true=worm | screw
 //  )
 // ex:
-//  $fn=30;B2_hub(wm4=false);
+//  $fn=30;B2_hub(wm4=true);
 module B2_hub(len=10,wm4=false){
   color("silver")difference(){
     cylinder(len,d=8);
     translate([0,0,-.05])cylinder(len+.1,d=3.8);
   }
-  translate([0,1.5,len-3.7])rotate([-90,0,0])if(!wm4){B2_SM3();}else{B2_WM4();}
+  translate([0,vm4?1.9:1.7,len-3.7])rotate([-90,0,0])if(!wm4){B2_SM3();}else{B2_WM4();}
 }
 
 // bounded wheel edge
