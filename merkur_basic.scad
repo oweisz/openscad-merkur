@@ -706,7 +706,7 @@ module M1078(color="yellow"){
    }
    //zmerene!
    //color("red")translate([35.74,0,0])cylinder(h=10,d=3);
-   color("red")translate([9.95,15.84,0])cylinder(h=10,d=3);
+   //color("red")translate([9.95,15.84,0])cylinder(h=10,d=3);
 }
 
 //  1080 - screwdriver
