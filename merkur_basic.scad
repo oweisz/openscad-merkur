@@ -694,16 +694,19 @@ module M1078(color="yellow"){
   th=1.1;
   color(color)difference(){
     hull(){
-      translate([-4,-3,0])cylinder(h=th,d=3);
-      translate([41,-3,0])cylinder(h=th,d=3);
-      translate([42,2,0])cylinder(h=th,d=1);
-      translate([4,25,0])cylinder(h=th,d=1);
-      translate([-4,24,0])cylinder(h=th,d=3);
+      translate([-3.5,-3.5,0])cylinder(h=th,d=3);
+      translate([41.5,-3.5,0])cylinder(h=th,d=3);
+      translate([42.5,1,0])cylinder(h=th,d=1);
+      translate([5,24.6,0])cylinder(h=th,d=1);
+      translate([-3.5,24,0])cylinder(h=th,d=3);
     }
     for(i=[0:3])translate([i*10,0,0])T1_hole(th=th);
-    for(i=[0:2])translate([0,i*10+10,0])T1_hole(th=th);
-    translate([10,15,0])rotate([0,0,-30])for(i=[0:3])translate([i*10,0,0])T1_hole(th=th);
+    for(i=[0:1])translate([0,i*10+10,0])T1_hole(th=th);
+    translate([9.95,15.84,0])rotate([0,0,360-atan(15.78/25.5)])for(i=[0:3])translate([i*10,0,0])T1_hole(th=th);
    }
+   //zmerene!
+   //color("red")translate([35.74,0,0])cylinder(h=10,d=3);
+   color("red")translate([9.95,15.84,0])cylinder(h=10,d=3);
 }
 
 //  1080 - screwdriver
