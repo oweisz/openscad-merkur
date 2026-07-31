@@ -1,0 +1,16 @@
+set terminal png size 600,600 
+      set output "tm0.png"
+       set size ratio -1
+        set nokey
+	 set noxtics
+	  set noytics
+	   set noborder
+	    set parametric
+	    #
+	     x(t)=(R-r)*cos(t) + p*cos((R-r)*t/r)
+	      y(t)=(R-r)*sin(t) - p*sin((R-r)*t/r)
+	      #
+	       R=100.0; r=2.0; p=80.0
+	        set samples 2001
+		#
+		 plot [t=0:2*pi] x(t),y(t) lc "black"
