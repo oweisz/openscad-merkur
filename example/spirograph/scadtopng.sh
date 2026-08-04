@@ -8,4 +8,4 @@
 
 #echo $1
 
-openscad-nightly -o "$1.png" --imgsize 2000,1000 --projection p --colorscheme White --csglimit 200000 "$1"
+openscad-nightly -o "$1.png" --imgsize 2500,1250 --projection p --colorscheme White --csglimit 200000 "$1"

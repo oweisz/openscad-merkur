@@ -1,5 +1,3 @@
-//install NopSCADlib 
-//https://github.com/nophead/NopSCADlib
 
 include <enic-comp.scad>
 include <x_axo.scad>

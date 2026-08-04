@@ -60,8 +60,8 @@ $vpd=250;
 */
 
 //hridel pohonu stolu + sestaveny stul
-module hr_stul2(mont=false){
-  translate([0,0,mont?80:-1])stul_sest(false);
+module hr_stul2(mont=false,pap=0,angle=0,scale=1,color="black"){
+  translate([0,0,mont?80:-1])stul_sest(simple=false,sest=false,pap=pap,angle=angle,scale=scale,color=color);
   translate([0,0,mont?-70:-53])M1050();
   if(mont)color("black")translate([0,0,-75])axo(100,axo_z,.5);
 }
@@ -225,9 +225,9 @@ $vpd=250;
 */
 
 //all prevody
-module prevody(poz=true){
+module prevody(poz=true,pap=0,angle=0,scale=1,color="black"){
   hr_stul(poz=30);
-  translate([0,-140,115])hr_stul2();
+  translate([0,-140,115])hr_stul2(pap=pap,angle=angle,scale=scale,color=color);
   translate([39.8,40,45])hr_pas();
   translate([0,40,18])hr_sv1();
   translate([-90,40.5,20])hr_sv2();
@@ -235,6 +235,12 @@ module prevody(poz=true){
   translate([40,41,120])hr_motor();
   translate([0,40,18])color("red")hr_guma();
 }
+
+/*
+include <../openscad-merkur/merkur.scad>
+include <stul.scad>
+rotate([0,-90,0])prevody(pap=1,scale=.5);
+*/
 
 //hridel stolu
 module prevod01(mont=false){
@@ -343,68 +349,3 @@ module prevod17(pre=true){
 
 
 //hr_sv3(pre=true);
-/*
-include <../openscad-merkur/merkur.scad>
-
-%import("sasi.stl");
-/*hr_sv3(pre=true);
-%render()hr_sv3(pre=false);
-*/
-
-/*
-prevod01(true);
-$vpt=[ 12.74, -2.24, 62.22 ];
-$vpr=[55,0,90];
-$vpd=750;
-*/
-
-
-/*prevod02(true);
-/*$vpt=[ 18.74, -30.58, 77.96 ];
-$vpr=[120,0,90];
-$vpd=850;
-*/
-
-/*
-prevod02(false);
-$vpt=[ 18.74, -30.58, 77.96 ];
-$vpr=[120,0,90];
-$vpd=800;
-*/
-
-/*
-prevod03(true);
-$vpt=[ -2.81, -13.18, -4.52 ];
-$vpr=[340,60,66];
-$vpd=300;
-*/
-
-
-/*
-prevod04(true);
-$vpt=[ 6.94, -17.31, 45.25 ];
-$vpr=[50,0,125];
-$vpd=900;
-*/
-
-/*
-prevod05(true);
-$vpt=[ 21.91, 9.42, 61.95 ];
-$vpr=[100,0,120];
-$vpd=750;
-*/
-
-/*
-prevod06(true);
-/*$vpt=[ 10.88, 33.31, -15.15 ];
-$vpr=[250,0,170];
-$vpd=450;
-*/
-
-
-
-/*prevod09();
-/*$vpt=[ 6.94, -17.31, 45.25 ];
-$vpr=[50,0,115];
-$vpd=900;
-*/

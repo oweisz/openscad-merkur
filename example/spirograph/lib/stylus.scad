@@ -48,7 +48,7 @@ $vpd=250;
 
 
 
-module rameno102(mont=false,fix=false){
+module rameno102(mont=false,fix=false,fxcolor="green"){
     translate([-10,0,0])M1025();
     translate([10,0,0])M1025();
     translate([0,-170,0])M1025();
@@ -62,7 +62,7 @@ module rameno102(mont=false,fix=false){
     translate([-6,mont?290:253.8,mont?-25+35:-24])rotate([90,0,90]){
       M1150();
         //montaz fixu
-      if(fix && !mont){translate([0,-11.5,13])rotate([-90,0,0])fix();
+      if(fix && !mont){translate([0,-11.5,13])rotate([-90,0,0])fix(fxcolor=fxcolor);
           //gumicka
           dg=2;
           color("red"){
@@ -166,11 +166,11 @@ $vpr=[73,0,121];
 $vpd=550;
 */
 
-module rameno101(pos=0,zpos=0,rot=0,doraz=false,mont=false,fix=false){
+module rameno101(pos=0,zpos=0,rot=0,doraz=false,mont=false,fix=false,fxcolor="green"){
     rotate([0,0,rot]){
     translate([0,0,12+zpos])rameno103(doraz=doraz);
     translate([0,(pos<94?pos:94)-207,zpos+11]){
-      rameno102(fix=fix);
+      rameno102(fix=fix,fxcolor=fxcolor);
       if(mont){
         translate([0,-115,18])M2062();
         translate([0,70,18])rotate([90,90,0])M1050();
@@ -192,7 +192,7 @@ $vpr=[68,0,115];
 $vpd=650;
 */
 
-module rameno(xpos=0,ypos=0,zpos=0,xrot=0,yrot=0,zrot=0,ax=0,az=0,mont=false,fix=false){
+module rameno(xpos=0,ypos=0,zpos=0,xrot=0,yrot=0,zrot=0,ax=0,az=0,mont=false,fix=false,fxcolor="green"){
   translate([xpos,0,0])rotate([xrot,0,0]){
     translate([135,5,0])rotate([0,0,90])tahlo101(mont=mont);
    if(mont){
@@ -200,7 +200,7 @@ module rameno(xpos=0,ypos=0,zpos=0,xrot=0,yrot=0,zrot=0,ax=0,az=0,mont=false,fix
     translate([0,0,-20])M1050();
       color("black")translate([0,0,-23])axo(115,axo_z,0.5);
     translate([0,0,15])rotate([0-ax,0,180+30])M1015();
-   }else{ translate([0,0,6])rameno101(pos=ypos,zpos=zpos,rot=zrot,doraz=true,fix=fix);
+   }else{ translate([0,0,6])rameno101(pos=ypos,zpos=zpos,rot=zrot,doraz=true,fix=fix,fxcolor=fxcolor);
     translate([0,0,4])rotate([0-az,0,180+ax])M1015();
     }
   }
@@ -212,8 +212,8 @@ module rameno(xpos=0,ypos=0,zpos=0,xrot=0,yrot=0,zrot=0,ax=0,az=0,mont=false,fix
 //rameno(xpos=0,ypos=0,zpos=0,xrot=0,zrot=0,ax=0,az=0);
 
 
-module fix(color="Green"){
-  color(color){
+module fix(fxcolor="Green"){
+  color(fxcolor){
     translate([0,0,0])cylinder(h=5, d1=0.5, d2=4);
     translate([0,0,5])cylinder(h=3, d=5);
     translate([0,0,8])cylinder(h=5, d1=5, d2=10);
