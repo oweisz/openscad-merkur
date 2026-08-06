@@ -1210,9 +1210,10 @@ module M1391(){
     }
 }
 
-//  1400 - motor: speed M1400(T1_fast | T1_slow);
-//  $fn=30;M1400(false); translate([15.2,25,5])rotate([0,-90,180])M3076(); translate([-15.4,15,5])rotate([0,-90,0])M3076();
-module M1400(T0_slow=true){
+//  1400 - motor: speed M1400(T1_fast | T1_slow, "plus" | "minus" | "");
+//  fast|slow rotation, polarity to black-red (brown) wire
+//  $fn=30;M1400(false,"minus"); translate([15.2,25,5])rotate([0,-90,180])M3076(); translate([-15.4,15,5])rotate([0,-90,0])M3076();
+module M1400(T0_slow=true,b_pol=""){
   translate([0,(T0_slow)?-15:-10,45])T0_shaft(40);
   color("Red"){
     translate([-9.5,0,0])cube([19,15,48]);
@@ -1245,6 +1246,13 @@ module M1400(T0_slow=true){
     //wire
     translate([-6.5,47.3,19.7])rotate([-90,0,0])color("brown")cylinder(h=6,d=1.5);
     translate([7,47.3,11.7])rotate([-90,0,0])color("black")cylinder(h=6,d=1.5);
+    aa=[-5,20,40];
+    if(search("m",b_pol)){
+        color("orange")translate(aa)cylinder(h=10,d1=5,d2=0);
+    }
+    if(search("p",b_pol)){
+        color("orange")translate(aa)cylinder(h=10,d1=0,d2=5);
+    }
 }
 
 //  2002 - strip thin 2 holes
