@@ -170,7 +170,7 @@ module v260(mont=false){
   }
 }
 
-//include <../openscad-merkur/merkur.scad>
+//include <openscad-merkur/merkur.scad>
 //translate([124.4,-60,5])rotate([0,0,90])mot_sv(mont=true);
 //import("sestava.stl");
 //import("prevody.stl");

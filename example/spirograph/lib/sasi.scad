@@ -107,7 +107,7 @@ module sasi100(mont=false,tap=false,mux=false){
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 sasi100(false,false,);
 //$vpt=[ 14.63, 69.01, 44.07 ];ž
 //$vpr=[45,0,110];
@@ -208,7 +208,7 @@ module sasi230(mont=false,sest=true,mont1=false,mux=false){
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 sasi230(mont=false,sest=false,mont1=false,mux=true);
 $vpt=[ -13.12, 110.03, 1.89 ];
 $vpr=[35,0,225];
@@ -305,7 +305,7 @@ module sasi210(mont=false,sest=true,mont1=false){
 }
 
 //pohled shora
-/*include <../openscad-merkur/merkur.scad>
+/*include <openscad-merkur/merkur.scad>
 rotate([0,-90,-90])sasi210(mont_up=true,sest=false,mont1=false);
 $vpt=[ 152.19, 84.72, -96.59 ];
 $vpr=[60,0,330];
@@ -625,7 +625,7 @@ translate([0,7,6.7])rotate([90,0,0])
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 //import ("sasi.stl");
 sasi800(mux=true);
 */

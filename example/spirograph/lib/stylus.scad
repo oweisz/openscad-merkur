@@ -15,7 +15,7 @@ module tahlo101(mont=false){
     }
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 tahlo101();
 */
 module rameno103(mont=false,doraz=false){
@@ -39,7 +39,7 @@ module rameno103(mont=false,doraz=false){
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 rameno103(true, false);
 /*$vpt=[ -0.49, -6.52, 0.44 ];
 $vpr=[340,320,80];
@@ -158,7 +158,7 @@ module rameno102(mont=false,fix=false,fxcolor="green"){
   }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 rameno102(false,true);
 $fn=50;
 /*$vpt=[ 0.80, 120.60, 15.83 ];
@@ -185,7 +185,7 @@ module rameno101(pos=0,zpos=0,rot=0,doraz=false,mont=false,fix=false,fxcolor="gr
   }
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 rameno101(mont=true,pos=40);
 $vpt=[ -45.36, -101.38, -12.51 ];
 $vpr=[68,0,115];
@@ -225,7 +225,7 @@ module fix(fxcolor="Green"){
 
 
 //montaz ramene
-/*include <../openscad-merkur/merkur.scad>
+/*include <openscad-merkur/merkur.scad>
 import("sasi.stl");
 import("prevody.stl");
 translate([0,-19,135])rotate([0,0,180])

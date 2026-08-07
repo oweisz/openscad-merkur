@@ -21,7 +21,7 @@ module stul_sest(simple=true,sest=false,pap=0,angle=0,scale=1,color="black"){
     }
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 include <vrut29.scad>
 
 stul_sest(simple=true,pap=1,angle=15,scale=.5,color="green");

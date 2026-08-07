@@ -80,7 +80,7 @@ module hr_stul(mont=false,poz=0,mux=false){
 
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 hr_stul(mux=true);
 */
 //pastorek
@@ -133,7 +133,7 @@ module hr_motor(mont=false,sest=false,mont1=false){
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 rotate([0,-90,0])hr_motor();
 $vpt=[ -98.44, -0.70, 3.61 ];
 $vpr=[55,0,20];
@@ -160,7 +160,7 @@ module hr_sv2(mont=false){
   if(mont)color("black")translate([0,0,-113])axo(240,axo_z,.5);
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 hr_sv2(true);
 */
 module hr_sv3(mont=false,pre=true,mux=false){
@@ -188,7 +188,7 @@ module hr_sv3(mont=false,pre=true,mux=false){
   }
 }
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 hr_sv2();
 import("sasi.stl");
 */
@@ -216,7 +216,7 @@ module hr_sv3m(mont=false,poz=false){
 
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 
 rotate([0,-90,0])hr_sv3m(mont=true,poz=false);
 $vpt=[ -98.44, -0.70, 3.61 ];
@@ -237,7 +237,7 @@ module prevody(poz=true,pap=0,angle=0,scale=1,color="black"){
 }
 
 /*
-include <../openscad-merkur/merkur.scad>
+include <openscad-merkur/merkur.scad>
 include <stul.scad>
 rotate([0,-90,0])prevody(pap=1,scale=.5);
 */
