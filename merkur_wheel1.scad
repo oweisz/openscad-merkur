@@ -591,8 +591,7 @@ module B2_SM3(drive="none"){
 
 //  worm screw M4
 //  stavěcí šroub M4
-// ex:
-//  $fn=30;B2_WM4();
+// ex:  $fn=30;B2_WM4();
 module B2_WM4(drive="none"){
   color("Silver")screw("M4",length=4,head="none",drive="slot",anchor=BOTTOM);;
 }
@@ -600,12 +599,11 @@ module B2_WM4(drive="none"){
 
 // screws and nuts M3.5 
 // šrouby a matice M3.5
-
-// $fn=30; B2_screw_head();
+// ex: $fn=30; B2_screw_head();
 module B2_screw_head(){
   difference(){
     cyl(l=2.33,d1=5.9,d2=5.9,anchor=BOTTOM,rounding=.25);
-    up(2.85-1)torx_mask2d(20,CENTER,0);
+    up(2.85-1.8)linear_extrude(6)torx_mask2d(20,CENTER,0);
   }
 }
 
@@ -647,7 +645,7 @@ module B2_M35N(thickness="normal"){
 //  wheel hub
 //  B2_hub(
 //    len
-//    wm4 true=worm | screw
+//    wm4 true= worm | screw
 //  )
 // ex:
 //  $fn=30;B2_hub(wm4=true);
@@ -656,7 +654,7 @@ module B2_hub(len=10,wm4=false){
     cylinder(len,d=8);
     translate([0,0,-.05])cylinder(len+.1,d=3.8);
   }
-  translate([0,vm4?1.9:1.7,len-3.7])rotate([-90,0,0])if(!wm4){B2_SM3();}else{B2_WM4();}
+  translate([0,wm4?1.9:1.7,len-3.7])rotate([-90,0,0])if(!wm4){B2_SM3();}else{B2_WM4();}
 }
 
 // bounded wheel edge
