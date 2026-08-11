@@ -1,5 +1,5 @@
 # Spirograph
 
-![image](spirohraph.png)
+![image](spirograph.png)
 
 Example for use library merkur
