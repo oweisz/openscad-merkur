@@ -8,3 +8,5 @@ module deska(full=true){
 }
 
 $fn=100;deska();
+
+//https://www.expresslaser.cz/dna-na-hackovane-kosiky/dno-na-hackovany-kosik-kruh-22-5cm/

@@ -12,3 +12,7 @@ module deska_vrt(simple=true){
     else;
   }
 }
+
+//https://www.expresslaser.cz/dna-na-hackovane-kosiky/dno-na-hackovany-kosik-kruh-22-5cm/
+
+//drill-stul.dxf
