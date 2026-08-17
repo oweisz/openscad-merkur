@@ -747,6 +747,34 @@ module M1085(){
   }
 }
 
+
+// 1084 - belt
+// belt length must be 340--360
+// path belt in turtle3d
+// "move",lenght,
+// "arczrot",radius,angle
+/*$fn=30;
+M1084(["move",110,"arczrot",20,180,"move",110,"arczrot",20,180]);
+translate([0,20,-12]){
+    M1042();
+    right(110)M1042();
+}
+*/
+module M1084(turtlepath=["move",110,"arczrot",20,180,"move",110,"arczrot",20,180]){
+    cesta = turtle3d(turtlepath);
+    lgp=(path_length(cesta));
+    assert((lgp>340)&&(lgp<360),"Belt length must be 340 -- 360");
+    color("grey"){
+        path_copies(cesta,n=40){
+            translate([0,0,-2])cube([2.7,24,2]);
+        }
+        path_extrude(cesta){
+            square([24,1]);
+            translate([10.5,1.5])zrot(90)circle(d=3,$fn=3);
+        }
+    }
+}
+
 //  1086 - steering wheel
 //  $fn=30;M1086();
 module M1086(){

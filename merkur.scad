@@ -25,6 +25,11 @@
  *  https://github.com/BelfrySCAD/BOSL2.git
  *
  */
+ 
+//for belt (M1098) pro generovani pasu
+include <BOSL2/std.scad>
+include <BOSL2/turtle3d.scad>
+
 
 ////  modules and function (moduly a funkce)
 include <merkur_utils1.scad>
