@@ -344,14 +344,6 @@ module M1083(color="yellow",hub=false){
   }
 }
 
-//  1084 belt pás
-/*    24x1,délka 384
-    zuby 2x2.5 roteč 10,2
-    vnitrni vystupek - trojuhelnik zakladna 3.5 vyska 2.31
-*/
-//  $fn=30;M1084();
-module M1084(){text("1084");}
-
 
 //  1140 - Cardan join shaft 11x11x40
 //  $fn=30;M1140(30,-30);
