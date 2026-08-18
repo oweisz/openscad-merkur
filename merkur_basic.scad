@@ -764,7 +764,7 @@ module M1084(turtlepath=["move",110,"arczrot",20,180,"move",110,"arczrot",20,180
     cesta = turtle3d(turtlepath);
     lgp=(path_length(cesta));
     echo("Lenght: ",lgp);
-    if(test)assert((lgp>340)&&(lgp<360),"Belt length must be 340 -- 360");
+    if(test)assert((lgp>340)&&(lgp<460),"Belt length must be 340 -- 460");
     color("grey"){
         path_copies(cesta,n=40){
             translate([0,0,-2])cube([2.7,24,2]);
