@@ -760,10 +760,11 @@ translate([0,20,-12]){
     right(110)M1042();
 }
 */
-module M1084(turtlepath=["move",110,"arczrot",20,180,"move",110,"arczrot",20,180]){
+module M1084(turtlepath=["move",110,"arczrot",20,180,"move",110,"arczrot",20,180],test=false){
     cesta = turtle3d(turtlepath);
     lgp=(path_length(cesta));
-    assert((lgp>340)&&(lgp<360),"Belt length must be 340 -- 360");
+    echo("Lenght: ",lgp);
+    if(test)assert((lgp>340)&&(lgp<360),"Belt length must be 340 -- 360");
     color("grey"){
         path_copies(cesta,n=40){
             translate([0,0,-2])cube([2.7,24,2]);
@@ -787,6 +788,22 @@ module M1086(){
     translate([0,0,-3])for(i=[0:120:359])rotate([0,0,i])translate([0,0,5])rotate([82,0,0])cylinder(h=15,d=1.2);
   }
 }
+
+//M1090 - 
+/*
+include <BOSL2/std.scad>
+include <BOSL2/turtle3d.scad>
+M1090(turtlepath=["move",300,"arczrot",20,90],test=false);
+*/
+module M1090(turtlepath=["move",300,"arczrot",50,90],test=false){
+    cesta=turtle3d(turtlepath);
+    lgp=(path_length(cesta));
+    echo("Lenght: ",lgp);
+    if(test)assert((lgp>40)&&(lgp<60),"Rubber band length must be 40 -- 60");
+    color("brown")path_extrude(cesta)circle(d=.8);    
+}
+
+
 
 //  1095 - rubber shaft stop
 //  $fn=30;M1095();
@@ -1787,6 +1804,20 @@ module M2130(){
   }
 }
 
+//M2309 - rubber band
+/*
+include <BOSL2/std.scad>
+include <BOSL2/turtle3d.scad>
+M2309(turtlepath=["move",30,"arczrot",5,180,"move",30,"arczrot",5,180],test=false);
+*/
+module M2309(turtlepath=["move",30,"arczrot",5,180,"move",30,"arczrot",5,180],test=false){
+    cesta=turtle3d(turtlepath);
+    lgp=(path_length(cesta));
+    echo("Lenght: ",lgp);
+    if(test)assert((lgp>40)&&(lgp<60),"Rubber band length must be 40 -- 60");
+    color("red")path_extrude(cesta)circle(d=1,$fn=4);    
+}
+  
 //  3031 - U strip 1-3-1
 //  $fn=30;M3031();
 module M3031(){

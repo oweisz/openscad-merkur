@@ -29,6 +29,9 @@
 ////  modules and function (moduly a funkce)
 include <merkur_utils1.scad>
 
+include <BOSL2/std.scad>
+include <BOSL2/turtle3d.scad>
+
 ////  basic pieces (základní díly)
 include <merkur_basic.scad>
 
