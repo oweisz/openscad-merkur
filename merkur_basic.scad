@@ -1676,6 +1676,18 @@ module M2062(){
   T0_shaft(170);
 }
 
+//  2064 - shaft 235 mm
+//  $fn=30;M2064();
+module M2064(){
+  T0_shaft(235);
+}
+
+//  2065 - shaft 255 mm
+//  $fn=30;M2065();
+module M2065(){
+  T0_shaft(255);
+}
+
 //  2070 - pawl small right
 //  $fn=30;M2070();
 module M2070(){
@@ -1959,6 +1971,18 @@ module M3062(){
   T0_shaft(150);
 }
 
+//  3064 - shaft 100 mm
+//  $fn=30;M3064();
+module M3064(){
+  T0_shaft(100);
+}
+
+//  3068 - shaft 180 mm
+//  $fn=30;M3068();
+module M3068(){
+  T0_shaft(180);
+}
+
 //  3076 - V strip 2 holes
 //  $fn=30;M3076();
 module M3076(){
@@ -2002,6 +2026,13 @@ module M4058(color="blue"){
   ca=sca(color);
   color(color)T0_BT(25,ca);
 }
+
+//  4060 - shaft 20 mm
+//  $fn=30;M4060();
+module M4060(){
+  T0_shaft(20);
+}
+
 
 //  4075 - plate 9x7 holes, plastic 
 //  $fn=30;M4075();
