@@ -401,6 +401,43 @@ module M1223(){
   }
 }
 
+//  1251 - screw M3.5x4
+//  $fn=30;M1251(1);
+module M1251(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(4,dx,thn,drive="flat");
+}
+
+//  1252 - screw M3.5x6
+//  $fn=30;M1252(10);
+module M1252(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(6,dx,thn,drive="flat");
+}
+
+//  1253 - screw M3.5x8
+//  $fn=30;M1253(1);
+module M1253(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(8,dx,thn,drive="flat");
+}
+
+//  1254 - screw M3.5x12
+//  $fn=30;M1254(1);
+module M1254(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(12,dx,thn,drive="flat");
+}
+
+//  1255 - screw M3.5x16
+//  $fn=30;M1255(1);
+module M1255(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(16,dx,thn,drive="flat");
+}
+
+//  1256 - screw M3.5x22
+//  $fn=30;M1256(1);
+module M1256(dx=3,thn="normal"){
+    color(T0_brass)B2_M35(22,dx,thn,drive="flat");
+}
+
+
 //  2043 - wheel 85 mm growe
 //  $fn=30;M2043();
 module M2043(){
@@ -479,10 +516,16 @@ module M2049(){
   }
 }
 
-//  2053 - screw M3.5x30
+//  2053 - screw M3.5x10
 //  $fn=30;M2053();
 module M2053(dx=30,thn=T0_nnrm){
     color("silver")B2_M35(10,dx,thn);
+}
+
+//  2054 - screw M3.5x22
+//  $fn=30;M2054();
+module M2054(dx=30,thn=T0_nnrm){
+    color("silver")B2_M35(22,dx,thn);
 }
 
 //  2083 - wheel for tyre 50 mm d58.4,h=9.8
@@ -591,11 +634,13 @@ module B2_WM4(drive="none"){
 
 // screws and nuts M3.5 
 // šrouby a matice M3.5
-// ex: $fn=30; B2_screw_head();
-module B2_screw_head(){
+// ex: $fn=30; B2_screw_head("flat");
+module B2_screw_head(drive="torx"){
+
   difference(){
     cyl(l=2.33,d1=5.9,d2=5.9,anchor=BOTTOM,rounding=.25);
-    up(2.85-1.8)linear_extrude(6)torx_mask2d(20,CENTER,0);
+    if(drive=="flat")up(2)cube([1,7,2],center=true);
+    else up(2.85-1.8)linear_extrude(6)torx_mask2d(20,CENTER,0);
   }
 }
 
@@ -618,7 +663,7 @@ module B2_M35(shaftlen=4,nutdist=30,thickness="normal",drive="torx"){
     translate([0,0,-shaftlen]){
       screw("M3.5",length=shaftlen+1,head="none",anchor=BOTTOM);
       thn=(thickness=="normal")?T0_nnrm:T0_nthc;
-      translate([0,0,shaftlen])B2_screw_head();
+      translate([0,0,shaftlen])B2_screw_head(drive);
       if(shaftlen>nutdist)translate([0,0,shaftlen-(nutdist+thn)])B2_M35N(thickness);
     }
 }
