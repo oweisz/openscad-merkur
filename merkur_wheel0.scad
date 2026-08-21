@@ -256,9 +256,11 @@ module M1057(){
 //  1068 crank
 //  $fn=30;M1068();
 module M1068(){
+    yflip(){
   T0_shaft(75);
   translate([0,89,16])T0_shaft(12);
   translate([0,74,0])rotate([45,0,0])T0_shaft(22);
+  }
 }
 
 //  1089 tyre for 1040

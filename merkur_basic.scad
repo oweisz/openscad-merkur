@@ -1979,9 +1979,9 @@ module M3064(){
 
 //  3068 - shaft 180 mm
 //  $fn=30;M3068();
-module M3068(){
-  T0_shaft(180);
-}
+//module M3068(){
+  //T0_shaft(180);
+//}
 
 //  3076 - V strip 2 holes
 //  $fn=30;M3076();
@@ -2080,6 +2080,19 @@ module M5058(color="blue"){
   ca=sca(color);
   color(color)T0_BT(3,ca);
 }
+
+//  5060 - shaft 25 mm
+//  $fn=30;M5060();
+module M5060(){
+  T0_shaft(25);
+}
+
+//  5062 - shaft 60 mm
+//  $fn=30;M5062();
+module M5062(){
+  T0_shaft(60);
+}
+
 
 //  5072 - plate 5x5 holes, transparent
 //  $fn=30;M5072();
