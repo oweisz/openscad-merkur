@@ -202,25 +202,25 @@ module M1051(thn="normal"){
 //  1052 - screw M3.5x6
 //  $fn=30;M1052(1);
 module M1052(dx=30,thn="normal"){
-    color("silver")T0_M35(6,dx,thn);
+    T0_M35(6,dx,thn);
 }
 
 //  1053 - screw M3.5x8
 //  $fn=30;M1053(6,"thick");
 module M1053(dx=30,thn="normal"){
-    color("silver")T0_M35(8,dx,thn);
+    T0_M35(8,dx,thn);
 }
 
 //  1054 - screw M3.5x16
 //  $fn=30;M1054(6);
 module M1054(dx=30,thn="normal"){
-    color("silver")T0_M35(16,dx,thn);
+    T0_M35(16,dx,thn);
 }
 
 //  1055 - screw M3.5x20
 //  $fn=30;M1055(6);
 module M1055(dx=30,thn="normal"){
-    color("silver")T0_M35(20,dx,thn);
+    T0_M35(20,dx,thn);
 }
 
 //  1056 - gear cone 26 th. m0.6
@@ -384,37 +384,37 @@ module M1223(){
 //  1251 - screw M3.5x4
 //  $fn=30;M1251(1);
 module M1251(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(4,dx,thn);
+    T0_M35(4,dx,thn,sc=T0_brass);
 }
 
 //  1252 - screw M3.5x6
 //  $fn=30;M1252(10);
 module M1252(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(6,dx,thn);
+    T0_M35(6,dx,thn,sc=T0_brass);
 }
 
 //  1253 - screw M3.5x8
 //  $fn=30;M1253(1);
 module M1253(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(8,dx,thn);
+    T0_M35(8,dx,thn,sc=T0_brass);
 }
 
 //  1254 - screw M3.5x12
 //  $fn=30;M1254(1);
 module M1254(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(12,dx,thn);
+    T0_M35(12,dx,thn,sc=T0_brass);
 }
 
 //  1255 - screw M3.5x16
 //  $fn=30;M1255(1);
 module M1255(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(16,dx,thn);
+    T0_M35(16,dx,thn,sc=T0_brass);
 }
 
 //  1256 - screw M3.5x22
 //  $fn=30;M1256(1);
 module M1256(dx=3,thn="normal"){
-    color(T0_brass)T0_M35(22,dx,thn);
+    T0_M35(22,dx,thn,sc=T0_brass);
 }
 
 //  2043 - wheel 85 mm growe
@@ -498,13 +498,13 @@ module M2049(){
 //  2053 - screw M3.5x10
 //  $fn=30;M2053();
 module M2053(dx=30,thn=T0_nnrm){
-    color("silver")T0_M35(10,dx,thn);
+    T0_M35(10,dx,thn);
 }
 
 //  2054 - screw M3.5x22
 //  $fn=30;M2054();
 module M2054(dx=30,thn=T0_nnrm){
-    color("silver")T0_M35(22,dx,thn);
+    T0_M35(22,dx,thn);
 }
 
 
@@ -570,6 +570,19 @@ module M3049(){
   }
 }
 
+//  3051 - screw M3.5x4 orange head
+//  $fn=30;M3051(1);
+module M3051(dx=30,thn="normal"){
+    T0_M35(4,dx,thn,hc="orange");
+}
+
+//  3052 - screw M3.5x4 orange head
+//  $fn=30;M3052(1);
+module M3052(dx=30,thn="normal"){
+    T0_M35(6,dx,thn,hc="orange");
+}
+
+
 //  3089 - tyre for 1040 thick
 //  $fn=30;M3089(color="silver",hub=true);
 module M3089(color="green",hub=false){
@@ -630,13 +643,13 @@ T0_nthc=2;    //Z-size nut "thin"
 //  if "dist > len" no render nut
 //  pokud "dist > len" nerenreruje matici
 // ex:
-//  $fn=30;translate([0,0,10.5])T0_M35(10,5);translate([10,0,0])T0_M35(10,5,thickness="thick");
-module T0_M35(shaftlen=4,nutdist=30,thickness="normal",drive="none"){
+// $fn=30;translate([0,0,10.5])T0_M35(10,5);translate([10,0,0])T0_M35(10,5,thickness="thick",hc="orange");
+module T0_M35(shaftlen=4,nutdist=30,thickness="normal",drive="none",sc="silver",hc="og"){
     translate([0,0,-shaftlen]){
-      cylinder(shaftlen,d=3.5);
+      color(sc)cylinder(shaftlen,d=3.5);
       thn=(thickness=="normal")?T0_nnrm:T0_nthc;
-      translate([0,0,shaftlen])cylinder(2.5,d=5.8);
-      if(shaftlen>nutdist)translate([0,0,shaftlen-(nutdist+thn)])T0_M35N(thickness);
+      translate([0,0,shaftlen])color(hc==undef?sc:hc)cylinder(2.5,d=5.8);
+      if(shaftlen>nutdist)translate([0,0,shaftlen-(nutdist+thn)])color(sc)T0_M35N(thickness);
     }
 }
 
